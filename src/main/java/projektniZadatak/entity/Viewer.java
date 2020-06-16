@@ -24,9 +24,9 @@ public class Viewer extends User implements Serializable {
     joinColumns = @JoinColumn(name = "viewer_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "projection_id", referencedColumnName = "id"))
 	private List<Projection> reservedTickets=new ArrayList<Projection>();
-	
-	 
-	
-	
-	
+
+
+	public Viewer(String name, String lastname, String email, String password) {
+		super(name, lastname, email, password);
+	}
 }

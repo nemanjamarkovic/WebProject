@@ -1,4 +1,4 @@
-INSERT INTO CINEMA(name,address,phone_number,email) VALUES ('Cinestar','NS','061333555','cinestar@gmail.com');
+/*INSERT INTO CINEMA(name,address,phone_number,email) VALUES ('Cinestar','NS','061333555','cinestar@gmail.com');
 INSERT INTO CINEMA(name,address,phone_number,email) VALUES ('Cineplexx','BG','061555333','cineplexx@gmail.com');
 INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date) VALUES ('User', 'ari','123','Nemanja','Markovic','06666666','ari13@gmail.com',true,2,'2019-01-02');
 INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date) VALUES ('Viewer', 'djoka','1231231','Djordje','Tovilovic','061712383','sadas@gmail.com',false,1,'2010-03-01');
@@ -28,4 +28,4 @@ INSERT INTO PROJECTION(day,price,cinema_id,movie_id) VALUES ('Saturday',450,2,5)
 INSERT INTO TIME_PROJECTION(hall_id,projection_id) VALUES (1,1);
 INSERT INTO TIME_PROJECTION(hall_id,projection_id) VALUES (2,3);
 INSERT INTO RESERVATIONS(viewer_id,projection_id) VALUES (3,1);
-INSERT INTO RESERVATIONS(viewer_id,projection_id) VALUES (2,1);
+INSERT INTO RESERVATIONS(viewer_id,projection_id) VALUES (2,1);*/

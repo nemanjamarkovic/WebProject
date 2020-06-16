@@ -39,7 +39,13 @@ public class Cinema implements Serializable{
 	
 	@OneToMany(mappedBy = "cinema", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Projection> schedule = new ArrayList<Projection>();
-	
+
+	public Cinema(String name, String address, String phoneNumber, String email){
+		this.name = name;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
 }
 
 
