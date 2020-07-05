@@ -57,6 +57,9 @@ public class User implements Serializable {
 	public String getEmail(){return email;}
 	public String getPassword(){return password;}
 	public Long getId(){return id;}
+	public String getName(){return name;}
+	public String getLastname(){return lastname;}
+
 
 	@Override
 	public String toString() {

@@ -1,0 +1,34 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User profile</title>
+</head>
+<body style="background-color:lightgrey;">
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="https://w1.pngwave.com/png/365/513/290/movie-logo-photographic-film-movie-camera-cinema-movie-projector-video-cameras-cinema-camera-circle-png-clip-art.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Cinema
+    </a>
+</nav>
+
+<h3>Name</h3>
+<h1 th:text="${user.name}"></h1></b>
+<h3>Last name</h3>
+<h1 th:text="${user.lastname}"></h1>
+<h3>Mail</h3>
+<h1 th:text="${user.email}"></h1>
+<a href="/cinema">Add cinema</a>
+<a href="/">Back</a>
+
+
+
+
+
+
+</body>
+</html>
