@@ -26,10 +26,86 @@ public class Movie implements Serializable{
 	private String description;
 	@Column
 	private String genre;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	/*public float getRating() {
+		return rating;
+	}*/
+
+	/*public void setRating(float rating) {
+		this.rating = rating;
+	}*/
+
+	public List<Projection> getProjections() {
+		return projections;
+	}
+
+	public void setProjections(List<Projection> projections) {
+		this.projections = projections;
+	}
+
+	public List<WatchedMovie> getWatchedMovies() {
+		return watchedMovies;
+	}
+
+	public void setWatchedMovies(List<WatchedMovie> watchedMovies) {
+		this.watchedMovies = watchedMovies;
+	}
+
+	public Movie(Long id, String title, String description, String genre, int duration, float rating, List<Projection> projections, List<WatchedMovie> watchedMovies) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.genre = genre;
+		this.duration = duration;
+		//this.rating = rating;
+		this.projections = projections;
+		this.watchedMovies = watchedMovies;
+	}
+
 	@Column
 	private int duration;
-	@Column
-	private float rating;
+	//@Column
+	//private float rating;
 
 
 	
@@ -40,7 +116,9 @@ public class Movie implements Serializable{
 	private List<WatchedMovie> watchedMovies=new ArrayList<WatchedMovie>();
 	
 	
-	
+	public Movie(){
+
+	}
 	
 	
 	
