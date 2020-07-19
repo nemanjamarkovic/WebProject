@@ -59,7 +59,7 @@ public class MovieController {
         //System.out.println(movies);
         for(RatedMovie movie : movies){
             if(!searchDTO.getTitle().isEmpty()) {
-                if (!(searchDTO.getTitle().equalsIgnoreCase(movie.getTitle())))
+                    if (!(searchDTO.getTitle().equalsIgnoreCase(movie.getTitle())))
                     toRemove.add(movie);
             }
         }

@@ -2,11 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manager</title>
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/manager.js"></script>
 </head>
-<body>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="https://w1.pngwave.com/png/365/513/290/movie-logo-photographic-film-movie-camera-cinema-movie-projector-video-cameras-cinema-camera-circle-png-clip-art.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Cinema
+    </a>
+</nav>
+
+<div class = "container-fluid">
+    <div class="col-sm-6">
+        <div class="container", id = "managerDiv" >
+            <table class = "table-hover" id="manager">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="container", id = "allHallsDiv" >
+
+
+
+            <table class = "table-hover" id="halls">
+                <tr>
+                    <th>ID</th>
+                    <th>Label</th>
+                    <th>Capacity</th>
+                    <th>E-mail</th>
+                    <th>Phone number</th>
+                </tr>
+            </table>
+
+            <table class = "table-hover" id="hallEdit">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>E-mail</th>
+                    <th>Phone number</th>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class = "container">
+
+</div>
+
+
+
+
 
 </body>
 </html>

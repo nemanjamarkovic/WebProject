@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#searchedMovies").hide();
     $("#allProjections").hide();
-
+    $("#reload").hide();
     $.ajax({
         type: "GET",                                                // HTTP metoda
         url: "http://localhost:8080/all-movies",                 // URL koji se gađa
@@ -29,6 +29,7 @@ $(document).ready(function () {
 
 $(document).on("submit", "form", function (event) {           // kada je submitovana forma za kreiranje novog zaposlenog
     event.preventDefault();
+    $("#reload").show();
     $("#searchedMovies").show();
     var title = $("#title").val();
     var genre = $("#genre").val();

@@ -1,9 +1,9 @@
 INSERT INTO CINEMA(name,address,phone_number,email) VALUES ('Cinestar','NS','061333555','cinestar@gmail.com');
 INSERT INTO CINEMA(name,address,phone_number,email) VALUES ('Cineplexx','BG','061555333','cineplexx@gmail.com');
-INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date) VALUES ('Viewer', 'ari','123','Nemanja','Markovic','06666666','ari13@gmail.com',true,2,'2019-01-02');
+INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date,cinema_id) VALUES ('Viewer', 'ari','123','Nemanja','Markovic','06666666','ari13@gmail.com',true,2,'2019-01-02',2);
 INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date) VALUES ('Viewer', 'djoka','1231231','Djordje','Tovilovic','061712383','sadas@gmail.com',false,1,'2010-03-01');
 INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date) VALUES ('Viewer', 'lavic','adada1','Lav','Maksimovic','06123123123','lav@gmail.com',true,1,'2019-03-01');
-INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date,cinema_id) VALUES ('Viewer', 'topa','kekeke','Srdjan','Topic','069696969','srsr@gmail.com',true,0,'2014-01-03',1);
+INSERT INTO USER(dtype,username,password,name,lastname,phone_number,email,active,role,date,cinema_id) VALUES ('Viewer', 'topa','kekeke','Srdjan','Topic','069696969','srsr@gmail.com',true,2,'2014-01-03',1);
 INSERT INTO MOVIE(title,description,duration,genre,date) VALUES ('Godfather 1 ','',220,'drama','2020-11-01');
 INSERT INTO MOVIE(title,description,duration,genre,date) VALUES ('Casino','',223,'crime','2020-11-01');
 INSERT INTO MOVIE(title,description,duration,genre,date) VALUES ('Wolf of Wall Street','',251,'comedy','2020-11-01');

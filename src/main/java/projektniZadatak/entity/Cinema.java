@@ -1,5 +1,7 @@
 package projektniZadatak.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,7 @@ public class Cinema implements Serializable{
 	@Column
 	private String email;
 	@Column
-	
+
 	@OneToMany(mappedBy = "cinema",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<User> managers = new ArrayList<User>();
 	
@@ -89,7 +91,7 @@ public class Cinema implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	@JsonIgnore
 	public List<User> getManagers() {
 		return managers;
 	}
@@ -97,7 +99,7 @@ public class Cinema implements Serializable{
 	public void setManagers(List<User> managers) {
 		this.managers = managers;
 	}
-
+	@JsonIgnore
 	public List<Hall> getHalls() {
 		return halls;
 	}

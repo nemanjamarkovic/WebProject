@@ -15,6 +15,7 @@ import projektniZadatak.entity.Viewer;
 import projektniZadatak.entity.dto.LoginDTO;
 import projektniZadatak.entity.dto.RegistrationDTO;
 import projektniZadatak.entity.dto.UserDTO;
+import projektniZadatak.entity.dto.ViewerDTO;
 import projektniZadatak.service.UserService;
 import projektniZadatak.service.ViewerService;
 
@@ -37,19 +38,19 @@ public class UserController {
     @PostMapping(value = "/registration",
                 consumes = MediaType.APPLICATION_JSON_VALUE,
                 produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Viewer> registration(@RequestBody RegistrationDTO registrationDTO)throws Exception{
+    public ResponseEntity<ViewerDTO> registration(@RequestBody RegistrationDTO registrationDTO)throws Exception{
 
         Viewer viewer = new Viewer(registrationDTO.getName(),registrationDTO.getLastname(),registrationDTO.getEmail(),registrationDTO.getPassword(), User.Role.VIEWER);
         System.out.println("2222222");
         viewerService.save(viewer);
         System.out.println(viewer);
 
-
-        return new ResponseEntity<>(viewer, HttpStatus.OK);
+        ViewerDTO viewerDTO = new ViewerDTO(viewer.getId(), viewer.getName(),viewer.getLastname(),viewer.getEmail(),viewer.getRole());
+        return new ResponseEntity<>(viewerDTO, HttpStatus.OK);
     }
 
     @PostMapping(value ="/login")
-    public ResponseEntity<User> login(@RequestBody LoginDTO loginDTO){
+    public ResponseEntity<UserDTO> login(@RequestBody LoginDTO loginDTO){
         System.out.println("121212");
 
         User user = null;
@@ -58,9 +59,10 @@ public class UserController {
         }catch(Exception e){
             System.out.println("nema korisnika pod tim imenom");
         }
+        UserDTO userDTO = new UserDTO(user.getId(),user.getName(),user.getLastname(), user.getEmail(),user.getPassword(),user.getRole());
 
         if(user.getPassword().equals(loginDTO.getPassword()))
-            return new ResponseEntity<User>(user,HttpStatus.OK);
+            return new ResponseEntity<UserDTO>(userDTO,HttpStatus.OK);
         else
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
 

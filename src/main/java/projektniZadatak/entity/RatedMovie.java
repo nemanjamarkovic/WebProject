@@ -16,7 +16,7 @@ public class RatedMovie implements Serializable {
     @Column
     private String description;
     @Column
-    private Date date;
+    private String date;
     @Column
     private int duration;
     @Column
@@ -73,11 +73,11 @@ public class RatedMovie implements Serializable {
         this.rating = rating;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -89,7 +89,7 @@ public class RatedMovie implements Serializable {
         this.duration = duration;
     }
 
-    public RatedMovie(Long id, String title, String genre, String description, double rating, int duration, Date date) {
+    public RatedMovie(Long id, String title, String genre, String description, double rating, int duration, String date) {
         this.id = id;
         this.title = title;
         this.genre = genre;

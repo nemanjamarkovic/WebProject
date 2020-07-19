@@ -9,11 +9,11 @@ public class MovieDTO {
     private String description;
     private String genre;
     private int duration;
-    private Date date;
+    private String date;
     private double rating;
     private Long id;
 
-    public MovieDTO(String title, String description, String genre, int duration, Date date, double rating, Long id) {
+    public MovieDTO(String title, String description, String genre, int duration, String date, double rating, Long id) {
         this.title = title;
         this.description = description;
         this.genre = genre;
@@ -31,7 +31,7 @@ public class MovieDTO {
         this.id = id;
     }
 
-    public MovieDTO(String title, String description, String genre, int duration, Date date, Long id) {
+    public MovieDTO(String title, String description, String genre, int duration, String date, Long id) {
         this.title = title;
         this.description = description;
         this.genre = genre;
@@ -72,11 +72,11 @@ public class MovieDTO {
         this.duration = duration;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -88,7 +88,7 @@ public class MovieDTO {
         this.rating = rating;
     }
 
-    public MovieDTO(String title, String description, String genre, int duration, Date date, double rating) {
+    public MovieDTO(String title, String description, String genre, int duration, String date, double rating) {
         this.title = title;
         this.description = description;
         this.genre = genre;

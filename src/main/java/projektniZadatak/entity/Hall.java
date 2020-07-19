@@ -20,28 +20,35 @@ import javax.persistence.ManyToOne;
 public class Hall implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
+	private Long id;
+
 	@Column
 	private int capacity;
 	@Column
 	private String label;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Cinema cinema;
-	
+
 	@ManyToMany
 	@JoinTable(name = "TimeProjection",
-    joinColumns = @JoinColumn(name = "hall_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "projection_id", referencedColumnName = "id"))
+			joinColumns = @JoinColumn(name = "hall_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "projection_id", referencedColumnName = "id"))
 	private Set<Projection> projections = new HashSet<>();
-
-	public Hall(int id, int capacity, String label, Cinema cinema, Set<Projection> projections) {
-		this.id = id;
+	public Hall(){}
+	public Hall(int capacity, String label, Cinema cinema, Set<Projection> projections) {
 		this.capacity = capacity;
 		this.label = label;
 		this.cinema = cinema;
 		this.projections = projections;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public int getCapacity() {
@@ -76,13 +83,14 @@ public class Hall implements Serializable {
 		this.projections = projections;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Hall(){
+	@Override
+	public String toString() {
+		return "Hall{" +
+				"id=" + id +
+				", capacity=" + capacity +
+				", label='" + label + '\'' +
+				", cinema=" + cinema +
+				", projections=" + projections +
+				'}';
 	}
 }

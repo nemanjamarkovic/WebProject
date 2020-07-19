@@ -1,5 +1,7 @@
 package projektniZadatak.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,14 +30,14 @@ public class Movie implements Serializable{
 	@Column
 	private String genre;
 	@Column
-	private Date date;
+	private String date;
 
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -103,7 +105,7 @@ public class Movie implements Serializable{
 		this.watchedMovies = watchedMovies;
 	}
 
-	public Movie(Long id, String title, String description, String genre, int duration, float rating,Date date,List<Projection> projections, List<WatchedMovie> watchedMovies) {
+	public Movie(Long id, String title, String description, String genre, int duration, float rating,String date,List<Projection> projections, List<WatchedMovie> watchedMovies) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -121,10 +123,10 @@ public class Movie implements Serializable{
 	//private float rating;
 
 
-	
+	@JsonIgnore
 	@OneToMany(mappedBy="movie",fetch=FetchType.LAZY,cascade=CascadeType.ALL,orphanRemoval=true)
 	private List<Projection> projections=new ArrayList<Projection>();
-	
+	@JsonIgnore
 	@OneToMany(mappedBy="movie",fetch=FetchType.LAZY,cascade=CascadeType.ALL,orphanRemoval=true)
 	private List<WatchedMovie> watchedMovies=new ArrayList<WatchedMovie>();
 	

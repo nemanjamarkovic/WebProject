@@ -1,10 +1,48 @@
 package projektniZadatak.entity.dto;
 
+import projektniZadatak.entity.User;
+
 public class UserDTO {
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public UserDTO(Long id, String name, String lastname, String email, String password, User.Role role) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
     private String name;
     private String lastname;
     private String email;
     private String password;
+    private User.Role role;
+
+    public User.Role getRole() {
+        return role;
+    }
+
+    public void setRole(User.Role role) {
+        this.role = role;
+    }
+
+    public UserDTO(String name, String lastname, String email, String password, User.Role role) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 
     public UserDTO(String name, String lastname, String email, String password) {
 
@@ -12,6 +50,7 @@ public class UserDTO {
         this.lastname = lastname;
         this.email = email;
         this.password = password;
+
     }
 
 

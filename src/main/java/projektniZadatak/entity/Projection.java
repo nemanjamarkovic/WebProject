@@ -1,5 +1,7 @@
 package projektniZadatak.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +26,10 @@ public class Projection {
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Movie movie;
-	
+	@JsonIgnore
 	@ManyToMany(mappedBy="projections")
 	private List<Hall> halls=new ArrayList<Hall>();
-	
+
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Cinema cinema;
 
