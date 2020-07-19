@@ -28,9 +28,6 @@ public class UserService {
     }
 
 
-
-
-
     public User findOne(Long id) {
         User user = this.userRepository.getOne(id);
         return user;

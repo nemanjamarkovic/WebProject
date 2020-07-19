@@ -1,3 +1,9 @@
+$(document).ready(function (event) {
+    if(sessionStorage.getItem("id"))
+        window.location.href = "user.html";
+
+});
+
 $(document).on("submit", "form", function (event) {           // kada je submitovana forma za kreiranje novog zaposlenog
     event.preventDefault();
 
@@ -18,7 +24,9 @@ $(document).on("submit", "form", function (event) {           // kada je submito
         success: function (data) {
             alert("Nalog uspjesno prijavljen " );
             sessionStorage.setItem("id",data["id"]);
-            window.location.replace("/api/user/profile/");
+            sessionStorage.setItem("role",data["role"]);
+            alert(sessionStorage.getItem("role"));
+            window.location.href = "user.html";
         },
         error: function (data) {
             console.log("ERROR : ", data);

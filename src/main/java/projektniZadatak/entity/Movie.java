@@ -2,6 +2,7 @@ package projektniZadatak.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -26,6 +27,17 @@ public class Movie implements Serializable{
 	private String description;
 	@Column
 	private String genre;
+	@Column
+	private Date date;
+
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
 	public Long getId() {
 		return id;
@@ -91,7 +103,7 @@ public class Movie implements Serializable{
 		this.watchedMovies = watchedMovies;
 	}
 
-	public Movie(Long id, String title, String description, String genre, int duration, float rating, List<Projection> projections, List<WatchedMovie> watchedMovies) {
+	public Movie(Long id, String title, String description, String genre, int duration, float rating,Date date,List<Projection> projections, List<WatchedMovie> watchedMovies) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -100,6 +112,7 @@ public class Movie implements Serializable{
 		//this.rating = rating;
 		this.projections = projections;
 		this.watchedMovies = watchedMovies;
+		this.date = date;
 	}
 
 	@Column

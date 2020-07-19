@@ -23,6 +23,55 @@ public class WatchedMovie implements Serializable{
 	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Movie movie;
-	
 
+	public WatchedMovie(double rating, Viewer viewer, Movie movie) {
+		this.rating = rating;
+		this.viewer = viewer;
+		this.movie = movie;
+	}
+	public WatchedMovie(){
+
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
+	public Viewer getViewer() {
+		return viewer;
+	}
+
+	public void setViewer(Viewer viewer) {
+		this.viewer = viewer;
+	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+
+	@Override
+	public String toString() {
+		return "WatchedMovie{" +
+				"id=" + id +
+				", rating=" + rating +
+				", viewer=" + viewer +
+				", movie=" + movie +
+				'}';
+	}
 }

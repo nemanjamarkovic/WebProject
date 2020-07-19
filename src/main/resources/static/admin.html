@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/admin.js"></script>
+</head>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img src="https://w1.pngwave.com/png/365/513/290/movie-logo-photographic-film-movie-camera-cinema-movie-projector-video-cameras-cinema-camera-circle-png-clip-art.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Cinema
+    </a>
+</nav>
+
+<div class = "container-fluid">
+    <div class="col-sm-6">
+        <div class="container", id = "allUsersDiv" >
+            <table class = "table-hover" id="allUsers">
+                <tr>
+                    <th>Name</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Cinema ID</th>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="container", id = "allCinemasDiv" >
+            <table class = "table-hover"></table>
+                <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>E-mail</th>
+                <th>Phone number</th>
+                </tr>
+             </table>
+
+
+            <table class = "table-hover" id="cinemas">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>E-mail</th>
+                    <th>Phone number</th>
+                </tr>
+            </table>
+
+            <table class = "table-hover" id="cinemaEdit">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>E-mail</th>
+                    <th>Phone number</th>
+                </tr>
+            </table>
+
+            <form class = "form-horizontal" id="addUserForm" >
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Name:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                </div>
+                </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="address">Address:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="address" placeholder="Enter address">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="phoneNumber">Phone number:</label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-dark" value = "submit">Add new cinema</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+<div class = "container">
+    <button class="btn btn-dark" id = "showUsers">Show all users</button>
+    <button class="btn btn-dark" id = "showCinema">Show all cinemas</button>
+    <button class="btn btn-dark" id = "close">Close</button>
+</div>
+
+
+
+
+
+</body>
+</html>

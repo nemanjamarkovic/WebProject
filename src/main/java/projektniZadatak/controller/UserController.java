@@ -9,39 +9,49 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import projektniZadatak.entity.User;
+import projektniZadatak.entity.Viewer;
 import projektniZadatak.entity.dto.LoginDTO;
 import projektniZadatak.entity.dto.RegistrationDTO;
 import projektniZadatak.entity.dto.UserDTO;
 import projektniZadatak.service.UserService;
+import projektniZadatak.service.ViewerService;
 
-@Controller
+@RestController
 
 @RequestMapping(value = "/api/user")
 public class UserController {
     @Autowired
     public UserService userService;
+    @Autowired
+    private ViewerService viewerService;
 
-    @GetMapping(value = "/register")
+
+/*    @GetMapping(value = "/register")
     public String reg(){
 
         return "registration.html";
-    }
+    }*/
 
     @PostMapping(value = "/registration",
                 consumes = MediaType.APPLICATION_JSON_VALUE,
                 produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UserDTO> registration(@RequestBody RegistrationDTO registrationDTO)throws Exception{
-        User user = new User(registrationDTO.getName(),registrationDTO.getLastname(),registrationDTO.getEmail(),registrationDTO.getPassword());
-        System.out.println("2222222");
-        User newUser = userService.save(user);
+    public ResponseEntity<Viewer> registration(@RequestBody RegistrationDTO registrationDTO)throws Exception{
 
-        UserDTO newUserDTO = new UserDTO(newUser.getId(),newUser.getName(),newUser.getLastname(),newUser.getEmail(),newUser.getPassword());
-        return new ResponseEntity<>(newUserDTO, HttpStatus.OK);
+        Viewer viewer = new Viewer(registrationDTO.getName(),registrationDTO.getLastname(),registrationDTO.getEmail(),registrationDTO.getPassword(), User.Role.VIEWER);
+        System.out.println("2222222");
+        viewerService.save(viewer);
+        System.out.println(viewer);
+
+
+        return new ResponseEntity<>(viewer, HttpStatus.OK);
     }
 
     @PostMapping(value ="/login")
     public ResponseEntity<User> login(@RequestBody LoginDTO loginDTO){
+        System.out.println("121212");
+
         User user = null;
         try {
             user = this.userService.findByMail(loginDTO.getEmail());
@@ -73,10 +83,17 @@ public class UserController {
 */
 
 
-    @PostMapping(value = "/profile")
-    public void profile(@RequestBody Long id){
-        System.out.println(id);
-    }
+    @GetMapping(value = "/profile/{id}")
+    public ResponseEntity<UserDTO> profile(@PathVariable(name = "id") Long id)throws Exception{
+            User user = this.userService.findOne(id);
+            System.out.println(id);
+            UserDTO userDTO = new UserDTO(user.getName(),user.getLastname(),user.getEmail(),user.getPassword());
+
+           // UserDTO userDTO = new UserDTO("nemamnaj","markovic","markovic","markl");
+            return new ResponseEntity<UserDTO>(userDTO,HttpStatus.OK);
+
+
+        }
 
 
 

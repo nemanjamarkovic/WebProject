@@ -1,27 +1,19 @@
 package projektniZadatak.entity.dto;
 
 public class UserDTO {
-    private Long id;
     private String name;
     private String lastname;
     private String email;
     private String password;
 
-    public UserDTO(Long id, String name, String lastname, String email, String password) {
-        this.id = id;
+    public UserDTO(String name, String lastname, String email, String password) {
+
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -54,4 +46,7 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
 }

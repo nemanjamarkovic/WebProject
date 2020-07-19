@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/all-movies.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="index.html">
+        <img src="https://w1.pngwave.com/png/365/513/290/movie-logo-photographic-film-movie-camera-cinema-movie-projector-video-cameras-cinema-camera-circle-png-clip-art.png" alt="logo" style="width:40px;">
+    </a>
+</nav>
+<div class = "container">
+    <div class = "row">
+
+        <div id = "allMovies">
+            <table class = "table-bordered" id="movies">
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Genre</th>
+                    <th>Duration</th>
+                    <th>Date</th>
+                    <th>Rating</th>
+                </tr>
+            </table>
+        </div>
+        <div >
+            <table class = "table-bordered" id="searchedMovies">
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Genre</th>
+                    <th>Duration</th>
+                    <th>Date</th>
+                    <th>Rating</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class = "row">
+        <form class = "form" id="addUserForm" >
+            <label for="title">Title:</label>
+            <input id="title" type="text"/><br>
+            <label for="genre">Genre:</label>
+            <input id="genre" type="text"/><br>
+            <label for="rating">Rating:</label>
+            <input id="rating" type="number"/><br>
+
+            <input type="submit" value="submit">
+        </form>
+    </div>
+            <div  id = "allProjections" >
+                <table class = "table-hover" id="projections">
+                    <tr>
+                        <th>Movie title</th>
+                        <th>Day</th>
+                        <th>Price</th>
+                        <th>Free spaces</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+</div>
+
+</body>
+</html>

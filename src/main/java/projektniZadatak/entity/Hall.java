@@ -34,8 +34,55 @@ public class Hall implements Serializable {
 	@JoinTable(name = "TimeProjection",
     joinColumns = @JoinColumn(name = "hall_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "projection_id", referencedColumnName = "id"))
-	private Set<Projection> projections = new HashSet<>(); 
-	
-	
-	
+	private Set<Projection> projections = new HashSet<>();
+
+	public Hall(int id, int capacity, String label, Cinema cinema, Set<Projection> projections) {
+		this.id = id;
+		this.capacity = capacity;
+		this.label = label;
+		this.cinema = cinema;
+		this.projections = projections;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	public Cinema getCinema() {
+		return cinema;
+	}
+
+	public void setCinema(Cinema cinema) {
+		this.cinema = cinema;
+	}
+
+	public Set<Projection> getProjections() {
+		return projections;
+	}
+
+	public void setProjections(Set<Projection> projections) {
+		this.projections = projections;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Hall(){
+	}
 }

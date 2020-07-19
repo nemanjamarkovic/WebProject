@@ -1,29 +1,55 @@
-function profile() {           // kada je submitovana forma za kreiranje novog zaposleno
+$(document).ready(function () {    // Čeka se trenutak kada je DOM(Document Object Model) učitan da bi JS mogao sa njim da manipuliše.
+    // ajax poziv
+    let id = sessionStorage.getItem("id");
+    let role = sessionStorage.getItem("role");
+    if(role.toString() == "MANAGER")
+        $("#adminOptions").hide();
+    else if(role.toString() == "ADMIN")
+        $("#managerOptions").hide();
+    else{
+        $("#adminOptions").hide();
+        $("#managerOptions").hide();
+    }
 
-    var id = sessionStorage.getItem("id");
-    alert(id);
 
-    var idJSON = idToJSON(id);  // pozivamo pomoćnu metodu da kreira JSON
+
+
+
+
 
     $.ajax({
-        type: "Post",                                               // HTTP metoda je POST
-        url: "http://localhost:8080/api/user/profile",                 // URL na koji se šalju podaci
-        dataType: "json",                                           // tip povratne vrednosti
-        contentType: "application/json",                            // tip podataka koje šaljemo
-        data: idJSON,                                      // Šaljemo novog zaposlenog
+        type: "Get",                                                // HTTP metoda
+        url: "http://localhost:8080/api/user/profile/"+id.toString(),                 // URL koji se gađa
+        dataType: "json",
         success: function (data) {
-            alert("Profil pronadjen " );
+            console.log("SUCCESS : ", data);
+            $('#name').append(data['name']);
+            $('#lastname').append(data['lastname']);
+            $('#email').append(data['email']);
 
         },
         error: function (data) {
-            alert("User not found!");
+            console.log("ERROR : ", data);
         }
     });
 });
 
 // Pomoćna funkcija koja serijalizuje polja iz forme i od njih kreira JSON
-function idToJSON(id) {
+function formToJSON(name, lastname, email) {
     return JSON.stringify({
-        "id": id,
+        "name": name,
+        "lastname": lastname,
+        "email": email
     });
 }
+
+
+$(document).on('click', '#adminOptions', function () {
+    window.location.href = "admin.html";
+
+});
+
+$(document).on('click', '#managerOptions', function () {
+    window.location.href = "manager.html";
+});
+
