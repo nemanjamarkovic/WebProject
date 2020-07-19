@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    $("#hallEdit").hide();
     $.ajax({
         type: "GET",
         url: "http://localhost:8080/manager/"+sessionStorage.getItem('id'),  // this.id je button id, a kao button id je postavljen id zaposlenog
@@ -22,7 +22,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-
+    $("#hallEdit").show();
 
     $.ajax({
         type: "GET",
@@ -93,7 +93,6 @@ $(document).on('click', '.saveChanges', function () {
 
     var id = this.id;
     var inputJSON = inputToJSON(label,capacity,id);
-    alert(inputJSON);
 
     $.ajax({
         type: "POST",                                               // HTTP metoda je POST
@@ -126,6 +125,8 @@ $(document).on('click', '.removeHall', function () {
         }
     });
 });
+
+
 
 
 

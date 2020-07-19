@@ -27,7 +27,7 @@ public class Hall implements Serializable {
 	@Column
 	private String label;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private Cinema cinema;
 
 	@ManyToMany

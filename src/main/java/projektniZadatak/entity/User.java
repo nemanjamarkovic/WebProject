@@ -40,7 +40,7 @@ public class User implements Serializable {
 	private Role role;
 	@Column
 	boolean active;
-	@ManyToOne(cascade =CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade =CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private Cinema cinema;
 	public User(String name, String lastname, String email,String password){
 		this.name = name;

@@ -176,7 +176,7 @@ $(document).on('click', '.saveChanges', function () {
     var id = this.id;
 
     var inputJSON = inputToJSON(name,address,email,phoneNumber,id);
-    alert(phoneNumber);
+
 
     $.ajax({
         type: "POST",                                               // HTTP metoda je POST

@@ -30,7 +30,7 @@ public class Projection {
 	@ManyToMany(mappedBy="projections")
 	private List<Hall> halls=new ArrayList<Hall>();
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private Cinema cinema;
 
 	@ManyToMany(cascade=CascadeType.ALL)

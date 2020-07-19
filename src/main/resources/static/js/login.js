@@ -22,10 +22,8 @@ $(document).on("submit", "form", function (event) {           // kada je submito
         contentType: "application/json",                            // tip podataka koje šaljemo
         data: loginJSON,                                      // Šaljemo novog zaposlenog
         success: function (data) {
-            alert("Nalog uspjesno prijavljen " );
             sessionStorage.setItem("id",data["id"]);
             sessionStorage.setItem("role",data["role"]);
-            alert(sessionStorage.getItem("role"));
             window.location.href = "user.html";
         },
         error: function (data) {
